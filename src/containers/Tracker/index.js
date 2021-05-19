@@ -1,17 +1,10 @@
-import styled from 'styled-components';
-import Chart from './Chart';
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { BarLoader } from 'react-spinners';
-import { useQuery } from 'react-query';
-import { getDogeInfo } from '../../queries';
+import styled from 'styled-components';
+
+const Chart = lazy(() => import('./Chart'));
 
 const Tracker = () => {
-  const { data, error } = useQuery('getDogeInfo', getDogeInfo, {
-    refetchInterval: 1500,
-  });
-
-  console.log(data);
-
   return (
     <TrackerContainer>
       <Header></Header>
