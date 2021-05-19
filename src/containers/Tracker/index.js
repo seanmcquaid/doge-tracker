@@ -9,6 +9,9 @@ const Tracker = () => {
   const { data, error } = useQuery('getDogeInfo', getDogeInfo, {
     refetchInterval: 1500,
   });
+
+  console.log(data);
+
   return (
     <TrackerContainer>
       <Header></Header>
