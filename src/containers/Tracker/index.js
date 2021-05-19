@@ -4,18 +4,16 @@ import styled from 'styled-components';
 
 const Chart = lazy(() => import('./Chart'));
 
-const Tracker = () => {
-  return (
-    <TrackerContainer>
-      <Header></Header>
-      <Main>
-        <Suspense fallback={<BarLoader />}>
-          <Chart />
-        </Suspense>
-      </Main>
-    </TrackerContainer>
-  );
-};
+const Tracker = () => (
+  <TrackerContainer>
+    <Header></Header>
+    <Main>
+      <Suspense fallback={<BarLoader />}>
+        <Chart />
+      </Suspense>
+    </Main>
+  </TrackerContainer>
+);
 
 const TrackerContainer = styled.div``;
 
